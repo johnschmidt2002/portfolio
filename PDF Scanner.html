@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>PDF Scanner - John Schmidt</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="text-gradient d-inline">John Schmidt</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Project Details Section -->
+        <section class="py-5">
+            <div class="container px-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder">PDF Scanner</h1>
+                    <p class="lead">A Python-based tool that converts images into high-quality PDFs with ease.</p>
+                </div>
+
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bolder">Overview</h2>
+                        <p>This project was designed to create a simple yet efficient PDF scanner using Python. The goal was to allow users to take an image input—whether it's a document, receipt, or note—and convert it into a clear, formatted PDF. This tool is especially useful for students, professionals, or anyone needing to digitize paper documents quickly.</p>
+
+                        <h2 class="fw-bolder">Approach</h2>
+                        <p>I developed the scanner using Python libraries such as OpenCV and PyPDF2. The application begins by allowing users to upload an image file. It then preprocesses the image using techniques like grayscale conversion, thresholding, and edge detection to enhance text clarity. Once processed, the image is converted into a PDF and saved locally.</p>
+
+                        <h2 class="fw-bolder">Challenges</h2>
+                        <p>One challenge was handling image distortions, especially from photos taken at awkward angles or with poor lighting. To resolve this, I implemented perspective transformation using OpenCV to straighten images. Additionally, ensuring text clarity on lower-resolution images required applying filters and adjusting contrast for optimal readability.</p>
+
+                        <h2 class="fw-bolder">Results</h2>
+                        <p>The final product efficiently converts images into clear, professional-quality PDFs. It accurately recognizes and enhances text in various lighting conditions and angles. The scanner is lightweight, user-friendly, and can handle multiple image formats, making it versatile for everyday use.</p>
+
+                        <h2 class="fw-bolder">Key Takeaways</h2>
+                        <p>This project sharpened my skills in image processing and Python scripting. I learned effective ways to handle image distortions and improve text recognition using basic computer vision techniques. In future iterations, I plan to integrate Optical Character Recognition (OCR) for text extraction, allowing users to edit scanned documents directly.</p>
+                    </div>
+                </div>
+
+                <a href="projects.html" class="btn btn-primary">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5 text-center">
+            <div class="small">© John Schmidt 2023</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

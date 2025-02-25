@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Object Tracker - John Schmidt</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="text-gradient d-inline">John Schmidt</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Project Details Section -->
+        <section class="py-5">
+            <div class="container px-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder">Object Tracker</h1>
+                    <p class="lead">A dynamic object tracking system that follows a soccer ball throughout a game.</p>
+                </div>
+
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bolder">Overview</h2>
+                        <p>This project aimed to build an object tracker capable of following a soccer ball across a video of a game. The challenge was to create a reliable system that could accurately track the ball's movement even during fast-paced sequences and among multiple moving players. Such technology is vital in sports analytics, allowing for advanced performance tracking and game analysis.</p>
+
+                        <h2 class="fw-bolder">Approach</h2>
+                        <p>The object tracker was developed using Python and OpenCV. I utilized techniques such as color detection, contour analysis, and motion detection to consistently recognize and follow the ball. Additionally, I incorporated frame-by-frame analysis to ensure smooth tracking throughout the video, even when the ball was partially obstructed.</p>
+
+                        <h2 class="fw-bolder">Challenges</h2>
+                        <p>One of the biggest hurdles was dealing with occlusion—when players or obstacles temporarily blocked the ball. I tackled this by implementing predictive tracking algorithms, which estimated the ball's likely location based on its last known trajectory. Another challenge was ensuring that lighting changes and different camera angles did not affect the detection accuracy.</p>
+
+                        <h2 class="fw-bolder">Results</h2>
+                        <p>The object tracker successfully followed the ball throughout an entire soccer match video with high accuracy. It handled moments of occlusion smoothly and adapted well to rapid movements and camera shifts. This tool could be valuable for coaches and analysts to gain deeper insights into player performance and game strategies.</p>
+
+                        <h2 class="fw-bolder">Key Takeaways</h2>
+                        <p>This project enhanced my understanding of computer vision and real-time tracking challenges. I gained experience working with OpenCV and developed better strategies for handling occlusion and noise in video frames. In the future, I plan to improve the tracker's predictive capabilities and explore applying machine learning for even more accurate predictions.</p>
+                    </div>
+                </div>
+
+                <a href="projects.html" class="btn btn-primary">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5 text-center">
+            <div class="small">© John Schmidt 2023</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
