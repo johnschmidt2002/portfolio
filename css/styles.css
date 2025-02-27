@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 /*!
 * Start Bootstrap - Personal v1.0.1 (https://startbootstrap.com/template-overviews/personal)
 * Copyright 2013-2023 Start Bootstrap
@@ -11921,23 +11921,32 @@ html {
   font-size: 1.5rem;
 }
 
+/* Profile Image Container - Remove Gradient */
 .profile {
-  position: relative;
-  height: 75vw;
-  width: 75vw;
-  border-radius: 5vw;
-  margin-top: 5vw;
-  max-height: 40rem;
-  max-width: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  height: auto;
+  overflow: hidden;
+  background: none !important; /* Removes any background gradient */
+  border: none !important; /* Removes any unwanted borders */
+  padding: 0;
 }
-.profile .profile-img {
-  height: 80vw;
-  max-height: 45rem;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+
+/* Profile Image */
+.profile-img {
+  width: 100%;  /* Ensures the image scales properly */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the entire image is visible without cropping */
+  border-radius: 0; /* Ensures it remains rectangular */
+  background: none !important; /* Ensures no gradient is applied */
 }
+
+
+
+
 .profile .dots-1 {
   position: absolute;
   width: 3vw;
@@ -12151,4 +12160,27 @@ html {
   opacity: 1; /* Reveal hover text */
   filter: drop-shadow(0 0 23px var(--text-hover-color));
 }
+/* Ensure buttons display correctly in the mobile navbar */
+.navbar-nav .nav-item {
+  display: flex;
+  justify-content: center; /* Centers the buttons */
+  align-items: center;
+  width: 100%; /* Makes them full width */
+}
+
+/* Fix button layout on mobile */
+.navbar-nav .nav-item .button {
+  width: 100%; /* Ensures buttons take full width */
+  text-align: center;
+  padding: 10px 0; /* Adjust spacing */
+}
+
+/* Remove Bootstrap's default button styling interfering on mobile */
+.navbar-nav .nav-link {
+  padding: 0; /* Prevents default padding from interfering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 }
