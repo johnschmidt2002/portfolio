@@ -91,28 +91,21 @@
                 </div>
             </nav>
             
-            
-            <!-- Loader -->
-<div id="loader-container">
-    <div class="loader">
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__ball"></div>
-    </div>
-</div>
-<section id="content-section" style="display: none;">
-    <!-- All your existing page content goes here -->
 
             <!-- About Me Section -->
             <div class="container px-5 my-5">
                 <div class="text-center mb-5">
                     <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">About Me</span></h1>
                 </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-10">
+                <div class="row gx-5 align-items-center">
+                    <!-- Image Card -->
+                    <div class="col-lg-5">
+                        <div class="card shadow border-0 rounded-4">
+                            <img src="lighthouse pic.JPG" class="card-img-top rounded-4" alt="John Schmidt">
+                        </div>
+                    </div>
+                    <!-- Text Content Card -->
+                    <div class="col-lg-7">
                         <div class="card shadow border-0 rounded-4">
                             <div class="card-body p-5">
                                 <h2 class="text-gradient d-inline">Hello! I'm John Schmidt</h2>
@@ -126,8 +119,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
             <!-- Core Values Section -->
             <div class="container px-5 my-5">
@@ -158,56 +149,50 @@
             </div>
         </main>
         </section>
-        
-        <!-- Footer -->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; John Schmidt 2025</div></div>
-                    <div class="col-auto">
-
-                        <a class="small" href="contact.html">Contact</a>
-                    </div>
+       
                 </div>
             </div>
-        </footer>
-        
-        <!-- Bootstrap core JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS -->
-        <script src="js/scripts.js"></script>
-        <!-- JavaScript to Hide Loader -->
-<script>
-    window.onload = function() {
-        setTimeout(function() {
-            document.getElementById("loader-container").style.display = "none";
-            document.getElementById("content-section").style.display = "block";
-        }, 1700);
-    };
-</script>
+
+        </main>
+<!-- Ensure Bootstrap's JavaScript is included -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var navbarToggler = document.querySelector(".navbar-toggler");
         var navbarCollapse = document.querySelector(".navbar-collapse");
 
-        if (navbarToggler && navbarCollapse) {
-            navbarToggler.addEventListener("click", function () {
-                navbarCollapse.classList.toggle("show");
-            });
+        // Track menu state manually to prevent it from reopening
+        var isMenuOpen = false;
 
-            // Close menu when a link is clicked (for mobile)
-            var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-            navLinks.forEach(function (link) {
-                link.addEventListener("click", function () {
-                    if (window.innerWidth < 992) { // Only on mobile
-                        navbarCollapse.classList.remove("show");
-                    }
-                });
+        navbarToggler.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent unintended behavior
+            isMenuOpen = !isMenuOpen; // Toggle state
+
+            if (isMenuOpen) {
+                navbarCollapse.classList.add("show");
+                navbarToggler.setAttribute("aria-expanded", "true");
+            } else {
+                navbarCollapse.classList.remove("show");
+                navbarToggler.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        // Close menu when clicking a nav link on mobile
+        document.querySelectorAll(".navbar-nav .nav-link").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (window.innerWidth < 992) { // Only close on mobile
+                    navbarCollapse.classList.remove("show");
+                    navbarToggler.setAttribute("aria-expanded", "false");
+                    isMenuOpen = false; // Ensure state is updated
+                }
             });
-        }
+        });
     });
 </script>
 
+
+
+
     </body>
-    
 </html>
