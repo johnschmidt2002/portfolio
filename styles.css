@@ -11920,7 +11920,6 @@ html {
   width: 3rem;
   font-size: 1.5rem;
 }
-
 /* Profile Image Container - Remove Gradient */
 .profile {
   display: flex;
@@ -11943,9 +11942,6 @@ html {
   border-radius: 0; /* Ensures it remains rectangular */
   background: none !important; /* Ensures no gradient is applied */
 }
-
-
-
 
 .profile .dots-1 {
   position: absolute;
@@ -12160,27 +12156,50 @@ html {
   opacity: 1; /* Reveal hover text */
   filter: drop-shadow(0 0 23px var(--text-hover-color));
 }
-/* Ensure buttons display correctly in the mobile navbar */
-.navbar-nav .nav-item {
-  display: flex;
-  justify-content: center; /* Centers the buttons */
-  align-items: center;
-  width: 100%; /* Makes them full width */
+/* Fix the mobile navbar layout */
+@media (max-width: 991px) {  /* Adjust styles for smaller screens */
+  .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      gap: 10px;
+  }
+
+  .navbar-nav .nav-item {
+      width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 250px; /* Adjust button width */
+      padding: 10px;
+      text-align: center;
+      background: transparent;
+      border: none;
+  }
+
+  /* Ensure buttons inside mobile navbar look correct */
+  .nav-item button {
+      width: 100%;
+      max-width: 250px;
+      padding: 8px 16px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+  }
+
+  /* Remove hover effects on mobile */
+  .navbar-nav .button .hover-text {
+      display: none;
+  }
 }
 
-/* Fix button layout on mobile */
-.navbar-nav .nav-item .button {
-  width: 100%; /* Ensures buttons take full width */
-  text-align: center;
-  padding: 10px 0; /* Adjust spacing */
-}
 
-/* Remove Bootstrap's default button styling interfering on mobile */
-.navbar-nav .nav-link {
-  padding: 0; /* Prevents default padding from interfering */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 }
