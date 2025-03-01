@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="A collection of photography by John Schmidt" />
+    <meta name="author" content="John Schmidt" />
+    <title>Photography | John Schmidt</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <!-- Custom Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    <!-- Bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- Lightbox CSS for image popups -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <style>
+        /* Container for the gallery */
+        .gallery-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+    
+        /* Description Card */
+        .description-card {
+            max-width: 350px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+    
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 400px;
+        }
+    
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover; /* Ensures proper scaling without distortion */
+        }
+    
+        /* Adjusting vertical images */
+        .slide.vertical {
+            max-height: 450px; /* Set a max height for vertical images */
+            width: auto;
+        }
+    
+        /* Ensure horizontal images scale appropriately */
+        .slide.horizontal {
+            max-width: 400px;
+            height: auto;
+        }
+    
+        .active-slide {
+            display: block;
+        }
+    
+        /* Navigation Arrows */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 25px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.6);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            transition: 0.3s;
+        }
+    
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    
+        .prev:hover, .next:hover {
+            color: rgba(0, 0, 0, 1);
+        }
+    
+        /* Dots Navigation */
+        .dots-container {
+            text-align: center;
+            margin-top: 10px;
+            position: absolute;
+            bottom: -25px; /* Adjusted so it's closer to the image */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+    
+        .dot {
+            height: 8px;
+            width: 8px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .active-dot {
+            background-color: #e21e80;
+        }
+    
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .gallery-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .description-card {
+                max-width: 90%;
+            }
+            
+            .slideshow-container {
+                max-width: 90%;
+            }
+        }
+    </style>
+    
+    
+</head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">
+                    <span class="text-gradient d-inline">John Schmidt</span>
+                </a>
+        
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <!-- Desktop Navbar (Visible on Large Screens) -->
+                        <li class="nav-item d-none d-xl-block">
+                            <a href="index.html" class="nav-link">
+                                <button class="button">
+                                    <span class="actual-text">&nbsp; Home&nbsp;</span>
+                                    <span aria-hidden="true" class="hover-text">&nbsp; Home&nbsp;</span>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item d-none d-xl-block">
+                            <a href="about.html" class="nav-link">
+                                <button class="button">
+                                    <span class="actual-text">&nbsp; About&nbsp;</span>
+                                    <span aria-hidden="true" class="hover-text">&nbsp; About&nbsp;</span>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item d-none d-xl-block">
+                            <a href="resume.html" class="nav-link">
+                                <button class="button">
+                                    <span class="actual-text">&nbsp; Resume&nbsp;</span>
+                                    <span aria-hidden="true" class="hover-text">&nbsp; Resume&nbsp;</span>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item d-none d-xl-block">
+                            <a href="projects.html" class="nav-link">
+                                <button class="button">
+                                    <span class="actual-text">&nbsp; Projects&nbsp;</span>
+                                    <span aria-hidden="true" class="hover-text">&nbsp; Projects&nbsp;</span>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item d-none d-xl-block">
+                            <a href="photography.html" class="nav-link">
+                                <button class="button">
+                                    <span class="actual-text">&nbsp; Photography&nbsp;</span>
+                                    <span aria-hidden="true" class="hover-text">&nbsp; Photography&nbsp;</span>
+                                </button>
+                            </a>
+                        </li>                        
+                        <li class="nav-item d-none d-xl-block">
+                            <a href="contact.html" class="nav-link">
+                                <button class="button">
+                                    <span class="actual-text">&nbsp; Contact&nbsp;</span>
+                                    <span aria-hidden="true" class="hover-text">&nbsp; Contact&nbsp;</span>
+                                </button>
+                            </a>
+                        </li>
+        
+                        <!-- Mobile Navbar (Visible on Medium and Small Screens) -->
+                        <li class="nav-item d-xl-none">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item d-xl-none">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item d-xl-none">
+                            <a href="resume.html" class="nav-link">Resume</a>
+                        </li>
+                        <li class="nav-item d-xl-none">
+                            <a href="projects.html" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item d-xl-none">
+                            <a href="photography.html" class="nav-link">Photography</a>
+                        </li>                        
+                        <li class="nav-item d-xl-none">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Loader -->
+<div id="loader-container">
+    <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+    </div>
+</div>
+<section id="content-section" style="display: none;">
+
+        <!-- Page Header -->
+        <header class="py-5">
+            <div class="container px-5 text-center">
+                <h1 class="display-5 fw-bolder text-gradient">Photography</h1>
+                <p class="lead text-muted">A glimpse into the world through my lens.</p>
+            </div>
+        </header>
+
+
+<!-- First Slideshow (Georgia) -->
+<section class="container px-5 my-5">
+    <div class="gallery-container">
+        <div class="description-card" style="text-align: left;">
+            <h3 id="photo-title">The Caucasus</h3>
+            <p id="photo-description">All captured in the Caucasus, these images reflect the beauty of autumn colors in rural Georgia.</p>
+        </div>
+
+        <div class="slideshow-container georgia">
+            <img class="slide vertical active-slide" src="photography/georgia5.jpg" alt="Autumn in Georgia">
+            <img class="slide" src="photography/georgia8.jpg" alt="Sunset over Tbilisi">
+            <img class="slide vertical" src="photography/georgia7.jpg" alt="Mountain views in Kazbegi">
+            <img class="slide" src="photography/georgia3.jpg" alt="Reflections by the Black Sea">
+            <img class="slide vertical" src="photography/georgia1.jpg" alt="Old streets of Tbilisi">
+
+            <!-- Navigation Arrows -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+
+            <!-- Dots -->
+            <div class="dots-container">
+                <span class="dot active-dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Second Slideshow (Baltics) -->
+<section class="container px-5 my-5">
+    <div class="gallery-container">
+
+
+        <div class="slideshow-container baltics">
+            <img class="slide vertical active-slide" src="photography/estonia2.jpg" alt="Lithuania Landscape">
+            <img class="slide vertical" src="photography/latvia2.jpg" alt="A Latvian Clocktower">
+            <img class="slide vertical" src="photography/lt1.jpg" alt="A View of Estonia">
+            <img class="slide vertical" src="photography/latvia4.jpg" alt="Latvian Figure">
+            <img class="slide" src="photography/lt5.jpg" alt="Snow Capped Forests">
+
+            <!-- Navigation Arrows -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+
+            <!-- Dots -->
+            <div class="dots-container">
+                <span class="dot active-dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="description-card" style="text-align: right;">
+            <h3 id="photo-title">The Baltics</h3>
+            <p id="photo-description">Captured in Lithuania, Latvia, and Estonia, showcasing their history, nature, and culture.</p>
+        </div>
+    </div>
+</section>
+
+        
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0">Copyright &copy; John Schmidt 2025</div></div>
+                <div class="col-auto">
+                    <a class="small" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript to Hide Loader -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("loader-container").style.display = "none";
+                document.getElementById("content-section").style.display = "block";
+            }, 1700);
+        };
+    </script>
+    <script>
+        function setupSlideshow(slideshowSelector) {
+            let slideshow = document.querySelector(slideshowSelector);
+            let slides = slideshow.querySelectorAll('.slide');
+            let dots = slideshow.querySelectorAll('.dot');
+            let currentIndex = 0;
+    
+            function showSlide(n) {
+                if (n >= slides.length) currentIndex = 0;
+                if (n < 0) currentIndex = slides.length - 1;
+                slides.forEach(slide => slide.style.display = "none");
+                dots.forEach(dot => dot.classList.remove("active-dot"));
+                slides[currentIndex].style.display = "block";
+                dots[currentIndex].classList.add("active-dot");
+            }
+    
+            function changeSlide(n) {
+                showSlide(currentIndex += n);
+            }
+    
+            function currentSlide(n) {
+                showSlide(currentIndex = n - 1);
+            }
+    
+            // Set initial slide
+            showSlide(currentIndex);
+    
+            // Add event listeners to arrows
+            slideshow.querySelector(".prev").addEventListener("click", () => changeSlide(-1));
+            slideshow.querySelector(".next").addEventListener("click", () => changeSlide(1));
+    
+            // Add event listeners to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => currentSlide(index + 1));
+            });
+        }
+    
+        // Initialize each slideshow separately
+        document.addEventListener("DOMContentLoaded", function () {
+            setupSlideshow(".slideshow-container.georgia");  // First slideshow
+            setupSlideshow(".slideshow-container.baltics");  // Second slideshow
+        });
+    </script>
+    
+</body>
+</html>
