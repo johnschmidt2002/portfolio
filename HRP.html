@@ -6,213 +6,130 @@
     <meta name="description" content="HRP - Tableau Dashboard" />
     <meta name="author" content="John Schmidt" />
     <title>Homelessness Risk Predictor - John Schmidt</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-    <!-- Bootstrap CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body class="d-flex flex-column h-100 bg-light">
-    <main class="flex-shrink-0">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html">
-                    <span class="text-gradient d-inline">John Schmidt</span>
-                </a>
-        
-                <!-- Mobile Toggle Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <!-- Navbar Links -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <!-- Desktop Navbar (Visible on Large Screens) -->
-                        <li class="nav-item d-none d-xl-block">
-                            <a href="index.html" class="nav-link">
-                                <button class="button">
-                                    <span class="actual-text">&nbsp; Home&nbsp;</span>
-                                    <span aria-hidden="true" class="hover-text">&nbsp; Home&nbsp;</span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="nav-item d-none d-xl-block">
-                            <a href="about.html" class="nav-link">
-                                <button class="button">
-                                    <span class="actual-text">&nbsp; About&nbsp;</span>
-                                    <span aria-hidden="true" class="hover-text">&nbsp; About&nbsp;</span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="nav-item d-none d-xl-block">
-                            <a href="resume.html" class="nav-link">
-                                <button class="button">
-                                    <span class="actual-text">&nbsp; Resume&nbsp;</span>
-                                    <span aria-hidden="true" class="hover-text">&nbsp; Resume&nbsp;</span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="nav-item d-none d-xl-block">
-                            <a href="projects.html" class="nav-link">
-                                <button class="button">
-                                    <span class="actual-text">&nbsp; Projects&nbsp;</span>
-                                    <span aria-hidden="true" class="hover-text">&nbsp; Projects&nbsp;</span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="nav-item d-none d-xl-block">
-                            <a href="photography.html" class="nav-link">
-                                <button class="button">
-                                    <span class="actual-text">&nbsp; Photography&nbsp;</span>
-                                    <span aria-hidden="true" class="hover-text">&nbsp; Photography&nbsp;</span>
-                                </button>
-                            </a>
-                        </li>                        
-                        <li class="nav-item d-none d-xl-block">
-                            <a href="contact.html" class="nav-link">
-                                <button class="button">
-                                    <span class="actual-text">&nbsp; Contact&nbsp;</span>
-                                    <span aria-hidden="true" class="hover-text">&nbsp; Contact&nbsp;</span>
-                                </button>
-                            </a>
-                        </li>
-        
-                        <!-- Mobile Navbar (Visible on Medium and Small Screens) -->
-                        <li class="nav-item d-xl-none">
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item d-xl-none">
-                            <a href="about.html" class="nav-link">About</a>
-                        </li>
-                        <li class="nav-item d-xl-none">
-                            <a href="resume.html" class="nav-link">Resume</a>
-                        </li>
-                        <li class="nav-item d-xl-none">
-                            <a href="projects.html" class="nav-link">Projects</a>
-                        </li>
-                        <li class="nav-item d-xl-none">
-                            <a href="photography.html" class="nav-link">Photography</a>
-                        </li>                        
-                        <li class="nav-item d-xl-none">
-                            <a href="contact.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        
-<!-- Loader -->
-<div id="loader-container">
-    <div class="loader">
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__ball"></div>
-    </div>
-</div>
-<section id="content-section" style="display: none;">
+<main class="flex-shrink-0">
 
-        <!-- Project Details Section -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html"><span class="text-gradient d-inline">John Schmidt</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                    <li class="nav-item d-none d-xl-block"><a href="index.html" class="nav-link"><button class="button"><span class="actual-text">&nbsp; Home&nbsp;</span><span aria-hidden="true" class="hover-text">&nbsp; Home&nbsp;</span></button></a></li>
+                    <li class="nav-item d-none d-xl-block"><a href="about.html" class="nav-link"><button class="button"><span class="actual-text">&nbsp; About&nbsp;</span><span aria-hidden="true" class="hover-text">&nbsp; About&nbsp;</span></button></a></li>
+                    <li class="nav-item d-none d-xl-block"><a href="resume.html" class="nav-link"><button class="button"><span class="actual-text">&nbsp; Resume&nbsp;</span><span aria-hidden="true" class="hover-text">&nbsp; Resume&nbsp;</span></button></a></li>
+                    <li class="nav-item d-none d-xl-block"><a href="projects.html" class="nav-link"><button class="button"><span class="actual-text">&nbsp; Projects&nbsp;</span><span aria-hidden="true" class="hover-text">&nbsp; Projects&nbsp;</span></button></a></li>
+                    <li class="nav-item d-none d-xl-block"><a href="photography.html" class="nav-link"><button class="button"><span class="actual-text">&nbsp; Photography&nbsp;</span><span aria-hidden="true" class="hover-text">&nbsp; Photography&nbsp;</span></button></a></li>
+                    <li class="nav-item d-none d-xl-block"><a href="contact.html" class="nav-link"><button class="button"><span class="actual-text">&nbsp; Contact&nbsp;</span><span aria-hidden="true" class="hover-text">&nbsp; Contact&nbsp;</span></button></a></li>
+                    <!-- Mobile nav -->
+                    <li class="nav-item d-xl-none"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item d-xl-none"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item d-xl-none"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item d-xl-none"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item d-xl-none"><a href="photography.html" class="nav-link">Photography</a></li>
+                    <li class="nav-item d-xl-none"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loader -->
+    <div id="loader-container">
+        <div class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+        </div>
+    </div>
+
+    <section id="content-section" style="display: none;">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
                 <h1 class="display-5 fw-bolder">Homelessness Risk Predictor</h1>
-                <p class="lead">A predictive model built using Python and scikit-learn to analyze 15 years of census data and determine key factors contributing to homelessness risk.</p>
+                <p class="lead">A predictive model built using Python and scikit-learn to analyze census data and determine key factors contributing to homelessness risk.</p>
             </div>
-
             <div class="card shadow border-0 rounded-4 mb-5">
                 <div class="card-body p-5">
                     <h2 class="fw-bolder">Overview</h2>
-                    <p>This project aims to identify and predict the risk factors contributing to homelessness by analyzing extensive socio-economic data. Using 15 years of census data from the American Community Survey (ACS), I built a predictive model to uncover patterns and indicators that could help policymakers, researchers, and support organizations proactively address homelessness.</p>
-
+                    <p>This project predicts individual risk of homelessness using several years of U.S. Census microdata. By applying machine learning to socio-economic and demographic factors, the goal is to help organizations and policymakers shift from reactive support to proactive prevention. Risk scores and key feature explanations are visualized interactively for decision-makers.</p>
+            
                     <h2 class="fw-bolder">Approach</h2>
-                    <p>Using Python and the scikit-learn library, I developed a machine learning model trained on 15 years of ACS census data. The dataset included various socio-economic factors such as income levels, employment status, housing costs, and educational attainment. I performed data preprocessing, including handling missing values, feature scaling, and normalization. The model was trained using logistic regression and random forest classifiers to determine which features contributed most significantly to the risk of homelessness. Visualizations were created in Tableau to present the findings in an interactive and digestible format.</p>
-
+                    <p>The model was built using Python, pandas, scikit-learn, and imbalanced-learn. I trained a logistic regression classifier on ACS data that spans from 2013-2022, and tested it on unseen 2023 data. Feature engineering included numeric scaling, categorical encoding, and binary variable mapping. Class imbalance was addressed using SMOTE. A full preprocessing and modeling pipeline was developed, and results were exported to Tableau-ready files.</p>
+            
                     <h2 class="fw-bolder">Challenges</h2>
-                    <p>One of the primary challenges was working with such a large and diverse dataset. Integrating data across 15 years required careful handling of changing variable definitions and missing data. Additionally, ensuring that the model could generalize across different regions and demographic groups required balancing the dataset and addressing class imbalances. I tackled this by applying techniques such as oversampling and using stratified cross-validation during model training.</p>
-
+                    <p>Major challenges included aligning variable formats across different years, defining a robust 'at risk' label, and handling strong class imbalance. I resolved these by creating consistent preprocessing rules and testing various label thresholds. SMOTE oversampling helped prevent the model from ignoring the minority class, and temporal testing confirmed that the model generalizes well to future data.</p>
+            
                     <h2 class="fw-bolder">Results</h2>
-                    <p>The predictive model successfully identified key risk factors associated with homelessness, including unemployment rates, household income, housing cost burdens, and educational attainment. The interactive Tableau dashboard allows users to explore these factors dynamically, highlighting regions and demographics at higher risk. This tool can help government agencies and non-profits better target their interventions and allocate resources more effectively.</p>
-
+                    <p>The final model achieves 88% accuracy and 98% recall for at-risk individuals, with an AUC score of 0.97. Key risk factors included lack of health insurance, age (18–25), and educational attainment (especially grade 11 dropouts). Tableau dashboards display model performance, risk distribution, feature importance, and occupational risk insights in an accessible, narrative format.</p>
+            
                     <h2 class="fw-bolder">Key Takeaways</h2>
-                    <p>This project strengthened my skills in data science, particularly in handling large datasets and training predictive models using scikit-learn. I gained valuable experience in feature engineering, model validation, and visual storytelling with Tableau. Moving forward, I plan to expand the model by incorporating additional datasets and exploring the use of neural networks to improve predictive accuracy.</p>
+                    <p>This project sharpened my skills in model training, pipeline architecture, data visualization, and interpretability. It also emphasized the importance of transparent analytics in high-impact areas like housing policy. Ultimately, it shows how structured data and thoughtful modeling can tell stories that matter — and potentially guide real-world intervention strategies.</p>
                 </div>
             </div>
+            
 
-            <!-- Embedded Tableau Dashboard -->
-           <!-- Embedded Tableau Dashboard -->
-<div class='tableauPlaceholder' id='viz1740607385600' style='position: relative; max-width: 600px; margin: auto;'>
-    <noscript>
-        <a href='#'><img alt='Demographic Data Visualizations' src='https://public.tableau.com/static/images/Wo/WorkingCapstone/Dashboard1/1_rss.png' style='border: none' /></a>
-    </noscript>
-    <object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='site_root' value='' />
-        <param name='name' value='WorkingCapstone/Dashboard1' />
-        <param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image' value='https://public.tableau.com/static/images/Wo/WorkingCapstone/Dashboard1/1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en-US' />
-        <param name='filter' value='publish=yes' />
-    </object>
-</div>
-<script type='text/javascript'>
-    var divElement = document.getElementById('viz1740607385600');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if ( divElement.offsetWidth > 800 ) { 
-        vizElement.style.minWidth='420px';
-        vizElement.style.maxWidth='650px';
-        vizElement.style.width='100%';
-        vizElement.style.minHeight='587px';
-        vizElement.style.maxHeight='887px';
-        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-    } else if ( divElement.offsetWidth > 500 ) { 
-        vizElement.style.minWidth='420px';
-        vizElement.style.maxWidth='650px';
-        vizElement.style.width='100%';
-        vizElement.style.minHeight='587px';
-        vizElement.style.maxHeight='887px';
-        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-    } else { 
-        vizElement.style.width='100%';
-        vizElement.style.height='1277px';
-    }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-</script>
-
-    </main>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><div class="small m-0">© John Schmidt 2025</div></div>
-                <div class="col-auto">
-                    <a class="small" href="contact.html">Contact</a>
-                </div>
-            </div>
+<!-- Embedded Tableau Story -->
+<div class="card shadow border-0 rounded-4 mb-5">
+    <div class="card-body p-5">
+        <h2 class="fw-bolder">Explore the Story</h2>
+        <p>The interactive Tableau story below walks through the homelessness risk model step by step. Use the navigation arrows at the top of the visualization to progress through the key drivers, demographic breakdowns, and model performance insights.</p>
+        <div class='tableauPlaceholder' id='viz1744662878959' style='position: relative'>
+            <noscript><a href='#'><img alt='Homelessness Risk Predictor' src='https://public.tableau.com/static/images/36/3668FR7RS/1_rss.png' style='border: none' /></a></noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='path' value='shared/3668FR7RS' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/36/3668FR7RS/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
         </div>
-    </footer>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1744662878959');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '1016px';
+            vizElement.style.height = '991px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+</div>
 
-    <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript to Hide Loader -->
+
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0">© John Schmidt 2025</div></div>
+            <div class="col-auto"><a class="small" href="contact.html">Contact</a></div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    window.onload = function() {
-        setTimeout(function() {
+    window.onload = function () {
+        setTimeout(function () {
             document.getElementById("loader-container").style.display = "none";
             document.getElementById("content-section").style.display = "block";
         }, 1700);
@@ -222,14 +139,10 @@
     document.addEventListener("DOMContentLoaded", function () {
         var navbarToggler = document.querySelector(".navbar-toggler");
         var navbarCollapse = document.querySelector(".navbar-collapse");
-
-        // Track menu state manually to prevent it from reopening
         var isMenuOpen = false;
-
         navbarToggler.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent unintended behavior
-            isMenuOpen = !isMenuOpen; // Toggle state
-
+            event.preventDefault();
+            isMenuOpen = !isMenuOpen;
             if (isMenuOpen) {
                 navbarCollapse.classList.add("show");
                 navbarToggler.setAttribute("aria-expanded", "true");
@@ -238,20 +151,16 @@
                 navbarToggler.setAttribute("aria-expanded", "false");
             }
         });
-
-        // Close menu when clicking a nav link on mobile
         document.querySelectorAll(".navbar-nav .nav-link").forEach(function (link) {
             link.addEventListener("click", function () {
-                if (window.innerWidth < 992) { // Only close on mobile
+                if (window.innerWidth < 992) {
                     navbarCollapse.classList.remove("show");
                     navbarToggler.setAttribute("aria-expanded", "false");
-                    isMenuOpen = false; // Ensure state is updated
+                    isMenuOpen = false;
                 }
             });
         });
     });
 </script>
-
-
 </body>
 </html>
